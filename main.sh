@@ -9,3 +9,8 @@ g++ -o atmosphere 1976-USA-Atmosphere/src/cpp/main.cpp -lboost_math_c99
 ./atmosphere
 
 rm -f atmosphere
+
+printf "="*15
+echo "Now running the Python script..."
+
+python 1976-USA-Atmosphere/src/python/main.py
