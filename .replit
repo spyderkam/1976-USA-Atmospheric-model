@@ -1,0 +1,9 @@
+entrypoint = "main.sh"
+modules = ["bash", "cpp-clang14", "python-base-3.13"]
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["bash", "main.sh"]
+deploymentTarget = "cloudrun"
