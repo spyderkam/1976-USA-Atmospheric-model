@@ -1,6 +1,7 @@
+#!/usr/bin/env python3
+
 import scipy.integrate as integrate
 import numpy as np
-
 
 g = -9.81     # This varies for altitude but will be assumed constant here.
 
@@ -23,8 +24,6 @@ class Atmosphere:
    
     def drag_force(self, Cd, A, vh, vx, vy, h, x=0, y=0):     # Cd is drag coefficient and A is cross-sectional area
         return 0.5*ρ(h)*np.square([vx, vy, vh])*Cd*A
-
-
 
 if __name__ == '__main__':
     atm_model = Atmosphere()

@@ -1,6 +1,8 @@
+// #include <boost/math/quadrature/gauss_kronrod.hpp>
 #include <cmath>
+#include <iostream>
 #include <vector>
-#include <boost/math/quadrature/gauss_kronrod.hpp>
+#include "trapezoidal_integration.hpp"
 
 const double g = -9.81;  // This varies for altitude but will be assumed constant here.
 
@@ -27,7 +29,8 @@ public:
     // Pressure function
     double P(double h) const {
         auto integrand = [this](double x) { return 1.0 / T(x); };
-        double integral = boost::math::quadrature::gauss_kronrod<double, 15>::integrate(
+        // double integral = boost::math::quadrature::gauss_kronrod<double, 15>::integrate(
+        double integral = numerical::adaptive_trapezoidal_integrate(
             integrand, h0, h, 5, 1e-9);
         return P0 * std::exp((g / R) * integral);
     }
