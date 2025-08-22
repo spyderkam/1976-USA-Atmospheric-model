@@ -7,5 +7,6 @@
     pkgs.nodePackages.bash-language-server
     pkgs.man
     pkgs.boost
+    pkgs.gnat
   ];
 }
