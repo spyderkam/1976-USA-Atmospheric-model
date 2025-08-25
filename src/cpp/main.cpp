@@ -31,9 +31,9 @@ public:
     double P(double h) const {
         auto integrand = [this](double x) { return 1.0 / T(x); };
         // double integral = boost::math::quadrature::gauss_kronrod<double, 15>::integrate(
-        double integral = numerical::simple_trapezoidal_integrate(
+        double integral = simple_trapezoidal_integrate(integrand, h0, h);
         // double integral = numerical::adaptive_trapezoidal_integrate(
-            integrand, h0, h, 5, 1e-9);
+        //    integrand, h0, h, 5, 1e-9);
         return P0 * std::exp((g / R) * integral);
     }
 
