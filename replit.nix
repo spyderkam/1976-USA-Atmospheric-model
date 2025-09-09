@@ -1,5 +1,6 @@
 { pkgs }: {
   deps = [
+    pkgs.gcc
     pkgs.xsimd
     pkgs.pkg-config
     pkgs.libxcrypt
